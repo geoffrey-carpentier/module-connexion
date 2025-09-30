@@ -1,0 +1,16 @@
+# Configuration locale (à personnaliser)
+config.local.php
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeur
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
