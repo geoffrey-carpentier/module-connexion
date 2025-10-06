@@ -3,6 +3,10 @@ Login Module
 
 ## Documentation
 
+### 📚 Documentation complète
+
+Pour une vue d'ensemble complète de toute la documentation disponible, consultez le [**Résumé de la documentation**](./docs/SUMMARY.md).
+
 ### Wireframes et Maquettes
 
 Les spécifications complètes pour les wireframes et maquettes sont disponibles dans le dossier [`/docs/wireframes/`](./docs/wireframes/).
@@ -14,16 +18,16 @@ Les spécifications complètes pour les wireframes et maquettes sont disponibles
 - [Admin](./docs/wireframes/04-admin.md) - Page d'administration
 - [Profil](./docs/wireframes/05-profil.md) - Page de profil utilisateur
 
-**Guide Figma :**
+**Guide et ressources :**
 - [Guide pour créer les wireframes dans Figma](./docs/wireframes/GUIDE-FIGMA.md)
+- [Mockups HTML interactifs](./docs/mockups/) - Références visuelles
 
 Chaque page est documentée avec :
-- Wireframes desktop (1440px)
-- Wireframes mobile (375px)
-- Composants et interactions
+- Wireframes desktop (1440px) et mobile (375px)
+- Composants et interactions détaillés
 - États et validation
 - Messages d'erreur et de succès
-- Règles d'accessibilité
+- Règles d'accessibilité (WCAG AA)
 
 ## Structure du projet
 
