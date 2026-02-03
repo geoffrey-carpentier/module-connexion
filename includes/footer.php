@@ -1,6 +1,6 @@
-<?php
-echo "<center><h1>Footer:</h1>
-        <h2>(infos diverses, liens, etc.)</h2>
-        <i style='color: red;'>en construction...</i></center>" ;
-
-?>
+</main>
+    <footer>
+        <p>&copy; 2025 Module Connexion - <a href="https://github.com/geoffrey-carpentier/module-connexion" target="_blank">GitHub</a></p>
+    </footer>
+</body>
+</html>
