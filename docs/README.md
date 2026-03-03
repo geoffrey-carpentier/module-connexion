@@ -5,16 +5,16 @@ Bienvenue dans la documentation du module de connexion ! 🎉
 ## 📖 Où commencer ?
 
 ### Pour créer les wireframes Figma
-👉 Commencez par lire le [**Résumé de la documentation**](./docs/SUMMARY.md) pour une vue d'ensemble complète.
+👉 Commencez par lire le [**Résumé de la documentation**](./SUMMARY.md) pour une vue d'ensemble complète.
 
 ### Liens rapides
 
 | Document | Description |
 |----------|-------------|
-| [📋 SUMMARY.md](./docs/SUMMARY.md) | **Vue d'ensemble complète** - Commencez ici ! |
-| [🎨 wireframes/](./docs/wireframes/) | **Spécifications détaillées** pour chaque page |
-| [🖥️ mockups/](./docs/mockups/) | **Mockups HTML interactifs** pour référence visuelle |
-| [📘 GUIDE-FIGMA.md](./docs/wireframes/GUIDE-FIGMA.md) | **Guide étape par étape** pour créer dans Figma |
+| [📋 SUMMARY.md](./SUMMARY.md) | **Vue d'ensemble complète** - Commencez ici ! |
+| [🎨 wireframes/](./wireframes/) | **Spécifications détaillées** pour chaque page |
+| [🖥️ mockups/](./mockups/) | **Mockups HTML interactifs** pour référence visuelle |
+| [📘 GUIDE-FIGMA.md](./wireframes/GUIDE-FIGMA.md) | **Guide étape par étape** pour créer dans Figma |
 
 ## 📝 Spécifications des wireframes
 
@@ -23,15 +23,15 @@ Chaque page a sa propre spécification détaillée :
 1. [**Accueil**](./wireframes/01-accueil.md) - Page d'accueil avec hero section
 2. [**Connexion**](./wireframes/02-connexion.md) - Formulaire de connexion
 3. [**Inscription**](./wireframes/03-inscription.md) - Formulaire d'inscription
-4. [**Admin**](./docs/wireframes/04-admin.md) - Tableau de bord administrateur
-5. [**Profil**](./docs/wireframes/05-profil.md) - Page de profil utilisateur
+4. [**Admin**](./wireframes/04-admin.md) - Tableau de bord administrateur
+5. [**Profil**](./wireframes/05-profil.md) - Page de profil utilisateur
 
 ## 🖥️ Mockups interactifs
 
 Visualisez et testez les mockups HTML :
 
-- [**Accueil**](./docs/mockups/accueil-mockup.html) - Mockup de la page d'accueil
-- [**Connexion**](./docs/mockups/connexion-mockup.html) - Mockup de la page de connexion
+- [**Accueil**](./mockups/accueil-mockup.html) - Mockup de la page d'accueil
+- [**Connexion**](./mockups/connexion-mockup.html) - Mockup de la page de connexion
 
 > **Astuce** : Ouvrez ces fichiers dans votre navigateur pour voir les interactions !
 
