@@ -1,4 +1,5 @@
 # module-connexion
+
 Login Module
 
 ## Documentation
@@ -12,6 +13,7 @@ Pour une vue d'ensemble complète de toute la documentation disponible, consulte
 Les spécifications complètes pour les wireframes et maquettes sont disponibles dans le dossier [`/docs/wireframes/`](./docs/wireframes/).
 
 **Pages à créer :**
+
 - [Accueil](./docs/wireframes/01-accueil.md) - Page d'accueil
 - [Connexion](./docs/wireframes/02-connexion.md) - Page de connexion
 - [Inscription](./docs/wireframes/03-inscription.md) - Page d'inscription
@@ -19,10 +21,12 @@ Les spécifications complètes pour les wireframes et maquettes sont disponibles
 - [Profil](./docs/wireframes/05-profil.md) - Page de profil utilisateur
 
 **Guide et ressources :**
+
 - [Guide pour créer les wireframes dans Figma](./docs/wireframes/GUIDE-FIGMA.md)
 - [Mockups HTML interactifs](./docs/mockups/) - Références visuelles
 
 Chaque page est documentée avec :
+
 - Wireframes desktop (1440px) et mobile (375px)
 - Composants et interactions détaillés
 - États et validation
@@ -31,7 +35,10 @@ Chaque page est documentée avec :
 
 ## Structure du projet
 
-```
+   
+````
+    markdown
+
 module-connexion/
 ├── index.php           # Page d'accueil
 ├── connexion.php       # Page de connexion
@@ -49,3 +56,4 @@ module-connexion/
 │   └── moduleconnexion.sql  # Base de données
 └── docs/
     └── wireframes/     # Documentation des wireframes
+```
