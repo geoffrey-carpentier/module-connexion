@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframes - Module de Connexion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .wireframe {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .wireframe h2 {
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 8px 8px 0 0;
+            font-size: 1.3em;
+        }
+
+        /* Composants wireframe */
+        .header {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-link {
+            background: #2c3e50;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .content-area {
+            min-height: 300px;
+            border: 2px dashed #bdc3c7;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 4px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            width: 100%;
+            height: 35px;
+            background: white;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .btn-success {
+            background: #27ae60;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            text-align: left;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .alert {
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .alert-error {
+            background: #fadbd8;
+            border: 1px solid #e74c3c;
+            color: #c0392b;
+        }
+
+        .alert-success {
+            background: #d5f4e6;
+            border: 1px solid #27ae60;
+            color: #229954;
+        }
+
+        .profile-section {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .annotations {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        .annotations h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .annotations ul {
+            margin-left: 20px;
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            .wireframe-grid {
+                grid-template-columns: 1fr;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📐 Wireframes - Module de Connexion</h1>
+
+        <div class="wireframe-grid">
+            
+            <!-- WIREFRAME 1: Page d'accueil -->
+            <div class="wireframe">
+                <h2>1. Page d'Accueil (index.php)</h2>
+                
+                <div class="header">
+                    <div class="nav">
+                        <div><strong>🔐 Module Connexion</strong></div>
+                        <div class="nav-links">
+                            <span class="nav-link">Accueil</span>
+                            <span class="nav-link">Inscription</span>
+                            <span class="nav-link">Connexion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-area">
+                    <div class="hero">
+                        <h3>Bienvenue sur le Module de Connexion</h3>
+                        <p>Créez votre compte et accédez à votre espace personnel en toute sécurité</p>
+                    </div>
+
+                    <div class="features">
+                        <div class="feature-card">
+                            <h4>📝 Inscription</h4>
+                            <p>Créez votre compte rapidement</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🔒 Sécurité</h4>
+                            <p>Vos données sont protégées</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>👤 Profil</h4>
+                            <p>Gérez vos informations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p>© 2025 - Module Connexion | <a href="#" style="color: #3498db;">GitHub</a></p>
+                </div>
+
+                <div class="annotations">
+                    <h4>📌 Annotations</h4>
+                    <ul>
+                        <li>Navigation adaptative (change si connecté)</li>
+                        <li>Hero section avec gradient</li>
+                        <li>3 cartes présentant les fonctionnalités</li>
+                        <li>Lien GitHub visible dans le footer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- WIREFRAME 2: Page inscription -->
+            <div class="wireframe">
+                <h2>2. Page Inscription (inscription.php)</h2>
+                
+                <div class="header">
+                    <div class="nav">
+                        <div><strong>🔐 Module Connexion</strong></div>
+                        <div class="nav-links">
+                            <span class="nav-link">Accueil</span>
+                            <span class="nav-link">Inscription</span>
+                            <span class="nav-link">Connexion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-area">
+                    <h3 style="margin-bottom: 20px; color: #2c3e50;">Créer un compte</h3>
+                    
+                    <div class="alert alert-error">
+                        ⚠️ Les mots de passe ne correspondent pas
+                    </div>
+
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Login *</label>
+                            <div class="form-input"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Prénom *</label>
+                            <div class="form-input"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Nom *</label>
+                            <div class="form-input"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Mot de passe *</label>
+                            <div class="form-input"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Confirmer le mot de passe *</label>
+                            <div class="form-input"></div>
+                        </div>
+
+                        <button class="btn btn-success">S'inscrire</button>
+                    </form>
+
+                    <p style="margin-top: 20px; color: #7f8c8d;">
+                        Déjà inscrit ? <a href="#" style="color: #3498db;">Se connecter</a>
+                    </p>
+                </div>
+
+                <div class="footer">
+                    <p>© 2025 - Module Connexion | <a href="#" style="color: #3498db;">GitHub</a></p>
+                </div>
+
+                <div class="annotations">
+                    <h4>📌 Annotations</h4>
+                    <ul>
+                        <li>Tous les champs sont obligatoires (*)</li>
+                        <li>Message d'erreur affiché en rouge</li>
+                        <li>Bouton "S'inscrire" en vert</li>
+                        <li>Lien vers page connexion en bas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- WIREFRAME 3: Page connexion -->
+            <div class="wireframe">
+                <h2>3. Page Connexion (connexion.php)</h2>
+                
+                <div class="header">
+                    <div class="nav">
+                        <div><strong>🔐 Module Connexion</strong></div>
+                        <div class="nav-links">
+                            <span class="nav-link">Accueil</span>
+                            <span class="nav-link">Inscription</span>
+                            <span class="nav-link">Connexion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-area">
+                    <h3 style="margin-bottom: 20px; color: #2c3e50;">Se connecter</h3>
+                    
+                    <div class="alert alert-success">
+                        ✅ Inscription réussie ! Vous pouvez maintenant vous connecter.
+                    </div>
+
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Login</label>
+                            <div class="form-input"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Mot de passe</label>
+                            <div class="form-input"></div>
+                        </div>
+
+                        <button class="btn">Se connecter</button>
+                    </form>
+
+                    <p style="margin-top: 20px; color: #7

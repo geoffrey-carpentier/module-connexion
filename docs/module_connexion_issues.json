@@ -1,0 +1,203 @@
+[
+  {
+    "title": "Init: Ajouter arborescence et fichiers de base",
+    "body": "Objectif : Créer la structure initiale du projet.\n\nChecklist :\n- Créer dossier assets/\n- Créer dossier assets/css/ et fichier style.css\n- Créer dossier assets/images/ (vide pour l’instant)\n- Créer dossier includes/ et fichiers : header.php, footer.php, config.php, functions.php\n- Créer dossier sql/ et fichier moduleconnexion.sql\n- Créer fichiers à la racine : index.php, inscription.php, connexion.php, profil.php, admin.php, README.md\n\nCritères d’acceptation :\n- L’arborescence est conforme\n- Tous les fichiers existent (même vides)",
+    "labels": [
+      "feature",
+      "docs"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "Git: Commit initial + .gitignore + README",
+    "body": "Objectif : Préparer repo GitHub.\n\nChecklist :\n- Ajouter un fichier .gitignore (ignorer /vendor, /.env, node_modules, etc.)\n- Créer un README minimal (titre, description rapide, techno utilisées)\n- Commit & push la structure initiale",
+    "labels": [
+      "docs"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "BDD: Créer base moduleconnexion et table utilisateurs",
+    "body": "Objectif : Créer la base de données moduleconnexion et la table utilisateurs.\n\nChecklist :\n- Créer la BDD moduleconnexion dans phpMyAdmin\n- Créer la table utilisateurs avec colonnes : id, login, prenom, nom, password\n- Vérifier l’encodage UTF8MB4\n- Exporter la structure dans sql/moduleconnexion.sql",
+    "labels": [
+      "bdd",
+      "high priority"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "BDD: Insérer utilisateur admin (admin/admin)",
+    "body": "Objectif : Créer un compte administrateur par défaut.\n\nChecklist :\n- Insérer dans utilisateurs un utilisateur avec login/prenom/nom/password = 'admin'\n- Vérifier insertion avec SELECT\n- Exporter l’insertion dans sql/moduleconnexion.sql",
+    "labels": [
+      "bdd",
+      "security"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "PHP: includes/config.php (connexion PDO)",
+    "body": "Objectif : Créer un fichier unique de configuration pour la connexion BDD.\n\nChecklist :\n- Établir une connexion PDO (hôte, dbname, user, password)\n- Gérer les erreurs avec try/catch\n- Configurer mode ERRMODE_EXCEPTION\n- Vérifier connexion dans un test simple",
+    "labels": [
+      "php",
+      "bdd"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "PHP: includes/header.php & footer.php",
+    "body": "Objectif : Créer un header et un footer communs inclus dans chaque page.\n\nChecklist :\n- Header : doctype, balises <head>, link vers assets/css/style.css\n- Ajouter une navbar avec liens (index, inscription, connexion, profil si connecté, admin si admin)\n- Footer : copyright\n- Inclure header et footer dans toutes les pages via include()",
+    "labels": [
+      "php",
+      "ui"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "PHP: includes/functions.php (helpers)",
+    "body": "Objectif : Centraliser des fonctions PHP utiles.\n\nChecklist :\n- isConnected() : retourne true si user connecté\n- isAdmin() : retourne true si user est admin\n- redirect($url) : redirection simple\n- sanitizeInput($string) : nettoyage basique (htmlspecialchars)",
+    "labels": [
+      "php",
+      "enhancement"
+    ],
+    "status": "Backlog",
+    "priority": "Medium"
+  },
+  {
+    "title": "Page: index.php (page d’accueil)",
+    "body": "Objectif : Créer la page principale du site.\n\nChecklist :\n- Inclure header.php et footer.php\n- Ajouter texte de présentation\n- Ajouter lien vers repo GitHub\n- Lien visible vers inscription/connexion",
+    "labels": [
+      "ui",
+      "feature"
+    ],
+    "status": "To Do",
+    "priority": "Medium"
+  },
+  {
+    "title": "Page: inscription.php – afficher formulaire",
+    "body": "Objectif : Créer le formulaire HTML d’inscription.\n\nChecklist :\n- Formulaire POST avec inputs : login, prenom, nom, password, confirm_password\n- Ajouter required\n- Ajouter bouton submit\n- Styliser avec assets/css/style.css",
+    "labels": [
+      "feature",
+      "ui",
+      "css"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "Page: inscription.php – traitement PHP",
+    "body": "Objectif : Ajouter le traitement du formulaire inscription.\n\nChecklist :\n- Vérifier méthode POST\n- Vérifier champs non vides\n- Vérifier password == confirm_password\n- Insérer utilisateur avec PDO prepared statement\n- Rediriger vers connexion.php",
+    "labels": [
+      "php",
+      "bdd"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "Page: connexion.php – afficher formulaire",
+    "body": "Objectif : Créer le formulaire HTML de connexion.\n\nChecklist :\n- Formulaire POST avec inputs login + password\n- Ajouter bouton submit\n- Styles CSS basiques",
+    "labels": [
+      "feature",
+      "ui"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "Page: connexion.php – traitement PHP & sessions",
+    "body": "Objectif : Authentifier l’utilisateur et démarrer une session.\n\nChecklist :\n- Vérifier POST login/password\n- Vérifier existence utilisateur avec SELECT PDO\n- Si OK → démarrer session et stocker $_SESSION['user']\n- Rediriger vers profil.php\n- Message d’erreur si échec",
+    "labels": [
+      "php",
+      "security"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "Page: profil.php – affichage & modification",
+    "body": "Objectif : Permettre à un utilisateur connecté de modifier ses infos.\n\nChecklist :\n- Vérifier isConnected()\n- Pré-remplir formulaire avec infos utilisateur\n- Traitement POST → UPDATE en BDD\n- Message succès/erreur",
+    "labels": [
+      "php",
+      "feature"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "Page: admin.php – accès réservé",
+    "body": "Objectif : Créer une page réservée à l’admin listant tous les utilisateurs.\n\nChecklist :\n- Vérifier isAdmin()\n- SELECT * FROM utilisateurs\n- Afficher liste dans un tableau\n- Restreindre accès aux autres",
+    "labels": [
+      "php",
+      "bdd",
+      "security"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "CSS: style.css – styles globaux",
+    "body": "Objectif : Styliser le site.\n\nChecklist :\n- Définir styles de base (body, container, h1, p)\n- Navbar simple\n- Styles pour formulaires (inputs, buttons)\n- Responsive minimal",
+    "labels": [
+      "css",
+      "ui"
+    ],
+    "status": "To Do",
+    "priority": "Medium"
+  },
+  {
+    "title": "UI: messages de feedback (succès/erreur)",
+    "body": "Objectif : Améliorer feedback utilisateur.\n\nChecklist :\n- Créer classes CSS .alert-success / .alert-error\n- Utiliser dans inscription/connexion/profil\n- Messages clairs après action",
+    "labels": [
+      "css",
+      "ui"
+    ],
+    "status": "To Do",
+    "priority": "Medium"
+  },
+  {
+    "title": "Security (MVP): PDO prepared statements",
+    "body": "Objectif : Sécuriser toutes les requêtes SQL.\n\nChecklist :\n- Vérifier toutes les requêtes SELECT/INSERT/UPDATE utilisent prepare() et execute()\n- Tester contre injections SQL",
+    "labels": [
+      "php",
+      "security"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "Security (bonus): Hachage des mots de passe",
+    "body": "Objectif : Améliorer la sécurité (bonus).\n\nChecklist :\n- Utiliser password_hash() à l’inscription\n- Utiliser password_verify() à la connexion\n- Mettre à jour SQL si nécessaire",
+    "labels": [
+      "security",
+      "enhancement"
+    ],
+    "status": "Backlog",
+    "priority": "Medium"
+  },
+  {
+    "title": "Feature: logout.php (déconnexion)",
+    "body": "Objectif : Permettre à l’utilisateur de se déconnecter.\n\nChecklist :\n- Créer logout.php\n- session_start() → session_destroy()\n- Redirection vers index.php\n- Ajouter lien Déconnexion dans navbar",
+    "labels": [
+      "php",
+      "feature"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  },
+  {
+    "title": "Feature: Exporter BDD (moduleconnexion.sql)",
+    "body": "Objectif : Préparer fichier SQL final.\n\nChecklist :\n- Exporter la BDD avec CREATE TABLE + INSERT admin\n- Placer le fichier dans sql/moduleconnexion.sql\n- Commit & push",
+    "labels": [
+      "bdd",
+      "docs"
+    ],
+    "status": "To Do",
+    "priority": "High"
+  }
+]

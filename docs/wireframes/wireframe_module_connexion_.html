@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Module de Connexion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Sélecteur de pages */
+        .page-selector {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .page-selector button {
+            margin: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .page-selector button.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .page-selector button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Contenu de page */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card h1 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Formulaires */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Table Admin */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table th, table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:hover {
+            background: #f5f5f5;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .cta-buttons a {
+            padding: 1rem 2rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .cta-buttons a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🔐 Module Connexion</div>
+        <div class="menu" id="mainMenu">
+            <a href="#" onclick="showPage('accueil'); return false;">Accueil</a>
+            <a href="#" onclick="showPage('inscription'); return false;">Inscription</a>
+            <a href="#" onclick="showPage('connexion'); return false;">Connexion</a>
+        </div>
+    </nav>
+
+    <!-- Sélecteur de pages (pour la démo) -->
+    <div class="container">
+        <div class="page-selector">
+            <h3>Navigation du Wireframe (pour visualisation)</h3>
+            <button onclick="showPage('accueil')" class="active" id="btn-accueil">Accueil</button>
+            <button onclick="showPage('inscription')" id="btn-inscription">Inscription</button>
+            <button onclick="showPage('connexion')" id="btn-connexion">Connexion</button>
+            <button onclick="showPage('profil')" id="btn-profil">Profil (connecté)</button>
+            <button onclick="showPage('admin')" id="btn-admin">Admin</button>
+        </div>
+
+        <!-- PAGE ACCUEIL -->
+        <div class="page-content active" id="page-accueil">
+            <div class="card">
+                <div class="hero">
+                    <h1>Bienvenue sur Module Connexion</h1>
+                    <p>Gérez votre compte en toute sécurité</p>
+                    <div class="cta-buttons">
+                        <a href="#" onclick="showPage('inscription'); return false;">Créer un compte</a>
+                        <a href="#" onclick="showPage('connexion'); return false;">Se connecter</a>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; color: #999;">
+                    "Leeloo Dallas Multipass!" - Module de gestion d'utilisateurs simple et sécurisé
+                </p>
+            </div>
+        </div>
+
+        <!-- PAGE INSCRIPTION -->
+        <div class="page-content" id="page-inscription">
+            <div class="card">
+                <h1>Inscription</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="login">Login *</label>
+                        <input type="text" id="login" name="login" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe *</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Confirmation mot de passe *</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                    </div>
+                    <button type="submit" class="btn">S'inscrire</button>
+                </form>
+                <div class="link">
+                    Déjà inscrit ? <a href="#" onclick="showPage('connexion'); return false;">Se connecter</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE CONNEXION -->
+        <div class="page-content" id="page-connexion">
+            <div class="card">
+                <h1>Connexion</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="login_conn">Login</label>
+                        <input type="text" id="login_conn" name="login" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_conn">Mot de passe</label>
+                        <input type="password" id="password_conn" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Se connecter</button>
+                </form>
+                <div class="link">
+                    Pas encore inscrit ? <a href="#" onclick="showPage('inscription'); return false;">Créer un compte</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE PROFIL -->
+        <div class="page-content" id="page-profil">
+            <div class="card">
+                <h1>Mon Profil</h1>
+                <p style="text-align: center; color: #667eea; font-weight: bold;">Connecté en tant que : John Doe</p>
+                <form>
+                    <div class="form-group">
+                        <label for="login_profil">Login</label>
+                        <input type="text" id="login_profil" name="login" value="johndoe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom_profil">Prénom</label>
+                        <input type="text" id="prenom_profil" name="prenom" value="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nom_profil">Nom</label>
+                        <input type="text" id="nom_profil" name="nom" value="Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_profil">Nouveau mot de passe (laisser vide pour ne pas changer)</label>
+                        <input type="password" id="password_profil" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password_profil">Confirmation nouveau mot de passe</label>
+                        <input type="password" id="confirm_password_profil" name="confirm_password">
+                    </div>
+                    <button type="submit" class="btn">Mettre à jour</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- PAGE ADMIN -->
+        <div class="page-content" id="page-admin">
+            <div class="card" style="max-width: 1000px;">
+                <h1>Administration - Liste des utilisateurs</h1>
+                <p style="color: #667eea; font-weight: bold; margin-bottom: 1rem;">⚠️ Accès réservé à l'administrateur</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Login</th>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>admin</td>
+                            <td>admin</td>
+                            <td>admin</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>johndoe</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td><a href="#" style="color: #667eea;">Détails</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>janedoe</td>
+                            <td>Jane</td>
+                            <td>Doe</td>
+                            <td><a href="#" style="color: #667eea;">Détails</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageName) {
+            // Masquer toutes les pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Désactiver tous les boutons
+            const buttons = document.querySelectorAll('.page-selector button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Afficher la page sélectionnée
+            document.getElementById('page-' + pageName).classList.add('active');
+            const activeBtn = document.getElementById('btn-' + pageName);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // Mettre à jour le menu selon l'état
+            updateMenu(pageName);
+        }
+
+        function updateMenu(currentPage) {
+            const menu = document.getElementById('mainMenu');
+            
+            if (currentPage === 'profil' || currentPage === 'admin') {
+                // Menu utilisateur connecté
+                menu.innerHTML = `
+                    <a href="#" onclick="showPage('accueil'); return false;">Accueil</a>
+                    <a href="#" onclick="showPage('profil'); return false;">Mon Profil</a>
+                    ${currentPage === 'admin' ? '<a href="#" onclick="showPage(\'admin\'); return false;">Administration</a>' : ''}
+                    <a href="#" onclick="showPage('accueil'); return false;">Déconnexion</a>
+                `;
+            } else {
+                // Menu utilisateur non connecté
+                menu.innerHTML = `
+                    <a href="#" onclick="showPage('accueil'); return false;">Accueil</a>
+                    <a href="#" onclick="showPage('inscription'); return false;">Inscription</a>
+                    <a href="#" onclick="showPage('connexion'); return false;">Connexion</a>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
