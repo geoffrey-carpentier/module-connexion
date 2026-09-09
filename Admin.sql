@@ -32,15 +32,16 @@ CREATE TABLE `utilisateurs` (
   `login` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prenom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id`, `login`, `prenom`, `nom`, `password`) VALUES
-(1, 'admin', 'admin', 'admin', '$2y$10$ZYT2ytuEj/osJmL/POHGued9oeaSSUWqQMtzrNNPhiX2pIx4JAad7');
+INSERT INTO `utilisateurs` (`id`, `login`, `prenom`, `nom`, `password`, `created_at`) VALUES
+(1, 'admin', 'admin', 'admin', '$2y$10$ZYT2ytuEj/osJmL/POHGued9oeaSSUWqQMtzrNNPhiX2pIx4JAad7', CURRENT_TIMESTAMP);
 
 --
 -- Indexes for dumped tables
